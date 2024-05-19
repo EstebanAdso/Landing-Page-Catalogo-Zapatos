@@ -1,0 +1,14 @@
+---------------------PASOS PARA LA PAGINA WEB
+
+1. estemos utilizando el puerto 8086
+2. crear una base de datos llamada usuarios e importar los dos sql (login, usuarios_listado)
+3. utilizamos java con spring para crear el backend de el formuñlario y de el gestor de usuarios con el crud
+4. En el inico de sesion como para mandar los datos del formulario Java tiene que estar funcionando
+5. para entrar el login al gestor de usuarios en el header habra un link de Iniciar sesion y ahi pedira los datos de usuario y password las cuales son (admin, 1234)
+
+Adso Sena 2024
+Integrantes
+Esteban Ciro 2627051
+Esteban Trujillo 2627051
+Alejandro Leal 2627050
+Jesus Bayona 2627050

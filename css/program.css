@@ -1,0 +1,813 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+p {
+    font-size: 1.25em;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 1.25em;
+}
+
+
+
+button {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 10px;
+    color: white;
+    background-color: blueviolet;
+}
+
+button:hover {
+    background-color: rgb(109, 21, 191);
+}
+
+
+
+/*-----Container--------*/
+header {
+    background-color: rgb(245, 245, 245);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+header .logo {
+    margin: 0;
+    padding: 20px 20px;
+    font-weight: bold;
+    color: blueviolet;
+    font-size: 1.6em;
+    cursor: pointer;
+    /* Para mostrar que es clicable */
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding-bottom: 0;
+    justify-content: space-between;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 10px;
+    padding: 0;
+    font-size: 15px;
+}
+
+header a {
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+header a:hover {
+    color: blueviolet;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header input[type="checkbox"] {
+        display: none;
+    }
+
+    header input[type="checkbox"]:checked+label+nav {
+        display: block;
+    }
+
+    header label.logo {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+
+    }
+
+    header nav ul li {
+        width: 100%;
+        text-align: center;
+
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    header input[type="checkbox"]:checked~nav {
+        display: block;
+    }
+}
+
+
+
+
+/*Boton wsp fijo*/
+.contacto-wsp {
+    background-color: transparent;
+    position: fixed;
+    right: -10px;
+    bottom: 15px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+.contacto-wsp:hover {
+    background-color: transparent;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.contacto-wsp img {
+    width: 100px;
+}
+
+@media (max-width: 768px) {
+    .contacto-wsp {
+        display: none;
+    }
+}
+
+/*-------Contacto----------*/
+#contacto__title {
+    font-size: 4em;
+    text-shadow: 0px 0px 20px #1c1a1a;
+    color: rgb(255, 255, 255);
+}
+
+#contacto {
+    animation: bg-fade 10s infinite ease-in-out;
+    transition: background-image 0.9s ease-in-out;
+    /* Agregar transición */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 95vh;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+}
+
+
+
+
+#contacto button {
+    font-size: 1.75em;
+    letter-spacing: 2px;
+    border-radius: 7px;
+
+}
+
+@media (max-width: 768px) {
+    #contacto button {
+        font-size: 1.3em;
+    }
+}
+
+
+/*Quienes somos */
+
+#quienes-somos .container {
+    text-align: center;
+    padding: 200px 12px;
+}
+
+
+
+#quienes-somos .container {
+    display: flex;
+    justify-content: center;
+
+}
+
+#quienes-somos .img-container {
+    background-image: url(../imagenes/LOGOMONACO.jpeg);
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    width: 400px;
+}
+
+#quienes-somos .text {
+    width: 50%;
+    text-align: initial;
+    padding: 0px 30px;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-left: 30px;
+}
+
+#quienes-somos h2 {
+    margin-top: 0px;
+    font-size: 2.7em;
+}
+
+@media (max-width: 768px) {
+    #quienes-somos .container {
+        display: block;
+        height: 70vh;
+        padding: 0;
+        margin: 0;
+    }
+
+    #quienes-somos .img-container {
+        width: 100%;
+        height: 200px;
+        margin-top: 140px;
+    }
+
+    #quienes-somos .text {
+        width: 100%;
+        text-align: initial;
+        display: flex;
+        justify-content: center;
+        text-align: justify;
+        margin: 0;
+        font-size: 12px;
+    }
+
+    #quienes-somos h2 {
+        margin-top: 0px;
+        font-size: 2.7em;
+        text-align: center;
+    }
+
+}
+
+
+
+/*Nuestros Productos*/
+
+#nuestros-productos .productos {
+    justify-content: center;
+}
+
+#nuestros-productos p {
+    display: block;
+}
+
+.color {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0da3e3;
+}
+
+#nuestros-productos button{
+    border-radius: 40px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 20px #1c1a1a ;
+    transition: transform 0.3s ease;
+}
+
+#nuestros-productos .productos form:first-child button {
+    /* Estilos específicos para el primer botón */
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 20px;
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url(../imagenes/MILITAR_MANUEL.jpeg);
+    background-position: center center;
+    background-size: cover;
+}
+
+#nuestros-productos .productos form:nth-child(2) button {
+    /* Estilos específicos para el segundo botón */
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 20px;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../imagenes/VIRGINIA_VERDE.jpeg);
+    background-position: center center;
+    background-size: cover;
+}
+
+#nuestros-productos .productos form:nth-child(3) button {
+    /* Estilos específicos para el tercer botón */
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 20px;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../imagenes/PIOLIN_BEIGE.jpeg);
+    background-position: center center;
+    background-size: cover;
+}
+#nuestros-productos .productos form:nth-child(4) button {
+    /* Estilos específicos para el tercer botón */
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 20px;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../imagenes/lujosos/lujosos1.jpeg);
+    background-position: center center;
+    background-size: cover;
+}
+#nuestros-productos .productos form:last-child button{
+    /* Estilos específicos para el tercer botón */
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 20px;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../imagenes/unisex/u4.jpeg);
+    background-position: center center;
+    background-size: cover;
+}
+
+#nuestros-productos .productos form button:hover{
+    background-color: transparent;
+    border: 1px solid #48e;
+    outline: 1px solid #48e;  
+    transform: scale(1.05); /* Añadido para agrandar la imagen al hacer hover */
+
+}
+
+#nuestros-productos .productos form button p{
+    font-style: normal;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+
+
+#nuestros-productos {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    text-align: center;
+}
+
+#nuestros-productos .container {
+    padding: 100px 0px;
+
+}
+
+
+
+#nuestros-productos h2 {
+    margin-top: 0;
+    font-size: 2.7em;
+}
+
+#nuestros-productos .referencia {
+    padding: 150px;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+
+.color-referencia {
+    text-shadow: 0 0 6px black;
+}
+
+@media (max-width: 768px) {
+
+
+    #nuestros-productos {
+        width: 100%;
+        height: auto;
+    }
+
+
+    #nuestros-productos h2 {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #0da3e3;
+    }
+
+    #nuestros-productos .referencia {
+        padding: 0;
+        margin: 0;
+        width: 95%;
+        margin: auto;
+        margin-bottom: 20px;
+
+    }
+    #nuestros-productos button{
+        border-radius: 20px;
+        border: 1px solid #ddd;
+    }
+    
+}
+
+
+
+
+/*Caracteristicas*/
+
+#caracteristicas .container {
+    text-align: center;
+    padding: 250px 12px;
+}
+
+#caracteristicas li {
+    margin: 12px 0px;
+    font-weight: bold;
+}
+
+#caracteristicas {
+    background-image: url(../imagenes/MILITAR_BEIGE.jpeg);
+    background-repeat: no-repeat;
+    background-size: 500px 400px;
+    background-position: calc(100vw - 700px) 120px;
+    margin-right: 20px;
+}
+
+#caracteristicas .container {
+    text-align: initial;
+}
+
+#caracteristicas ul {
+    margin-left: 100px;
+}
+
+@media (max-width: 768px) {
+
+    #caracteristicas li {
+        color: #ccc;
+    }
+
+    #caracteristicas {
+        background-image: linear-gradient(0deg,
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)), url(../imagenes/PIOLIN_BEIGE.jpeg);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+    }
+
+}
+
+/*Videos*/
+
+#video .container {
+    text-align: center;
+    padding: 200px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#videos p {
+    font-size: 30px;
+    text-align: center;
+    margin: 0 0 0 30px;
+
+}
+
+#videos {
+    background-color: whitesmoke
+}
+
+#misvideos {
+    height: 800px;
+    width: 400px;
+}
+
+#videos h2 {
+    text-align: center;
+    font-size: 2.7em;
+}
+
+.color-acento {
+    color: blueviolet;
+}
+
+#video .container {
+    text-align: center;
+    padding: 200px 12px;
+}
+
+@media (max-width: 768px) {
+    #video .container {
+        padding: 0;
+        margin: 0;
+        display: block;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    #videos p {
+        font-size: 16px;
+        text-align: justify;
+        padding-bottom: 70px;
+        margin: 10px;
+
+
+    }
+
+    #videos {
+        background-color: whitesmoke
+    }
+
+    #misvideos {
+        height: 600px;
+        width: 300px;
+        padding: 0;
+        margin: 0;
+    }
+
+    #videos h2 {
+        text-align: center;
+        font-size: 2.7em;
+    }
+
+    .color-acento {
+        color: blueviolet;
+    }
+
+}
+
+
+
+/*Contacto 1*/
+
+#contacto1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    color: #fff;
+    background-color: rgb(30, 30, 30);
+}
+
+#contacto1 img {
+    display: none;
+}
+
+#contacto1 h2 {
+    color: #48e;
+    font-size: 2.7em;
+    margin-bottom: 30px;
+}
+
+#contacto1 div {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url(../imagenes/piolin/p3.jpeg);
+    background-position: center center;
+    background-size: cover;
+    max-width: 70%;
+    max-height: 70%;
+    border: 1px solid #aaa;
+    padding: 20px 50px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+#contacto1 button {
+    font-size: 1em;
+    letter-spacing: 2px;
+    border-radius: 7px;
+    margin-top: 30px;
+    background-color: #48e;
+}
+
+@media (max-width: 768px) {
+    #contacto1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        height: auto;
+        color: #262424;
+        background-color: #ffffff;
+    }
+
+    #contacto1 img {
+        display: initial;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-top: -25px;
+    }
+
+    #contacto1 h2 {
+        color: #0da3e3;
+        font-size: 2.7em;
+        text-align: center;
+
+
+    }
+
+    #contacto1 div {
+        max-width: 100%;
+        margin: 25px;
+        padding: 0;
+        border: none;
+        background-color: #ffffff;
+        background-image: none;
+
+
+    }
+
+    #contacto1 button {
+        font-size: 1em;
+        letter-spacing: 2px;
+        border-radius: 7px;
+        background-color: #0da3e3;
+        ;
+    }
+
+    #contacto1 p {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        text-align: justify;
+        margin-top: -55px;
+
+    }
+}
+
+
+
+/*Footer*/
+
+
+footer {
+    padding-top: 20px;
+}
+
+footer ul {
+
+    list-style-type: none;
+    margin: 0;
+    text-align: center;
+    align-items: center;
+
+}
+
+footer ul li {
+    display: block;
+    margin: 0;
+    /* Puedes ajustar este valor según sea necesario */
+    font-size: 15px;
+    padding: 0;
+
+}
+
+footer ul li p {
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+footer ul li a {
+
+    text-decoration: none;
+    color: #555;
+    margin: 20px;
+}
+
+footer ul li a:hover {
+    color: blueviolet;
+
+}
+
+footer {
+    background-color: rgb(229, 225, 225);
+}
+
+footer p {
+    margin: 0;
+    color: #555;
+    padding: 12px
+}
+
+footer .container {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end
+}
+
+
+footer .container {
+    justify-content: flex-end;
+}
+
+
+
+@media (max-width: 768px) {
+
+    footer {
+        background-color: rgb(30, 30, 30);
+    }
+
+
+    footer p {
+        margin: 0;
+        color: #ccc;
+        padding: 12px
+    }
+
+    footer ul li a {
+
+        text-decoration: none;
+        color: #ccc;
+        margin: 20px;
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/formPost.css">
+</head>
+
+<body>
+    
+    <header>
+        <div class="container">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="logo">Monaco Shoes</label>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#productos" class="dropbtn">Nuestros Productos</a>
+                        <div class="dropdown-content">
+                            <a href="../html/piolin.html">Piolin</a>
+                            <a href="../html/militares.html">Militares</a>
+                            <a href="../html/lujosos.html">Lujosos</a>
+                            <a href="../html/virginia.html">Virginia</a>
+                            <a href="../html/unisex.html">Unisex</a>
+                        </div>
+                    </li>
+                    <li><a href="../index.html">Nuestros Videos</a></li>
+                    <li><a href="contacto.html">Te llamamos!</a></li>
+                    <li><a href="../usuarios_registro/index.html" target="_blank">Inicia Sesion!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="final">
+        <h2 id="cambiarTexto">¿Listo para comprar? <br> Nosotros te Llamamos</h2>
+        <fieldset id="oculto">
+            <legend>Formulario de Contacto</legend>
+            <form id="formularioPost" method="post">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su Nombre">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono de contacto:</label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="Ingrese su teléfono">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Ingrese su Correo Electrónico">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Mensaje:</label>
+                    <textarea name="descripcion" id="descripcion" cols="50" rows="4"
+                        placeholder="Ingresa Tu mensaje"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </fieldset>
+
+    </section>
+
+</body>
+<script src="../js/json.js"></script>
+
+
+</html>

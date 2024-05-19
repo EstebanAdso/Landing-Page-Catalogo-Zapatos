@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: rgb(245, 245, 245);
+    position: fixed;
+    width: 100%;
+    top: 0; /* Asegura que el encabezado se posicione en la parte superior */
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    
+    nav ul li {
+        position: relative;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #000;
+    }
+    
+    nav ul li a:hover {
+        background-color: #ddd;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+
+
+#menu-toggle {
+    display: none;
+}
+
+header .logo {
+    margin: 0;
+    padding: 20px 20px;
+    font-weight: bold;
+    color: blueviolet;
+    font-size: 1.6em;
+    cursor: pointer; /* Para mostrar que es clicable */
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding-bottom: 0;
+    justify-content: space-between;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 10px;
+    padding: 0;
+    font-size: 15px;
+}
+
+header a {
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+header a:hover {
+    color: blueviolet;
+}
+
+@media (max-width: 768px) {
+    /* Media queries para tamaños de pantalla más pequeños */
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header input[type="checkbox"] {
+        display: none;
+    }
+
+    header input[type="checkbox"]:checked + label + nav {
+        display: block;
+    }
+
+    header label.logo {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    header nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    header input[type="checkbox"]:checked ~ nav {
+        display: block;
+    }
+}
+
+
+
+/* Estilos para la sección del catálogo */
+section {
+    margin: 100px;
+    overflow: auto; /* Limpiar los flotantes */
+}
+
+/* Estilos para el contenedor central */
+.contenedor_central {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las cartas se envuelvan en múltiples líneas */
+    justify-content: center; /* Centrar verticalmente los elementos */
+}
+
+/* Estilos para el botón de la carta del catálogo */
+.carta_catalogo {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 350px; /* Máximo ancho de la carta */
+    margin-right: 20px; /* Espacio entre las cartas */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    margin-bottom: 20px;
+}
+
+.carta_catalogo:hover {
+    outline: 1px solid #777;
+}
+
+/* Estilos para la imagen del catálogo dentro del botón */
+.carta_catalogo .catalogo__imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el título del catálogo dentro del botón */
+.carta_catalogo h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el texto del catálogo dentro del botón */
+.carta_catalogo p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+
+@media (max-width: 700px) {
+    section {
+        margin: 0;
+        margin-top: 100px;
+        overflow: auto; /* Limpiar los flotantes */
+    }
+    
+    /* Estilos para el contenedor central */
+    .contenedor_central {
+        display: flex;
+        flex-wrap: wrap; /* Permitir que las cartas se envuelvan en múltiples líneas */
+        justify-content: center; /* Centrar verticalmente los elementos */
+    }
+    
+    /* Estilos para el botón de la carta del catálogo */
+    .carta_catalogo {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 350px; /* Máximo ancho de la carta */
+        margin-right: 20px; /* Espacio entre las cartas */
+        cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+        margin-bottom: 20px;
+    }
+    
+    .carta_catalogo:hover {
+        outline: 1px solid #777;
+    }
+    
+    /* Estilos para la imagen del catálogo dentro del botón */
+    .carta_catalogo .catalogo__imagen img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    
+    /* Estilos para el título del catálogo dentro del botón */
+    .carta_catalogo h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    
+    /* Estilos para el texto del catálogo dentro del botón */
+    .carta_catalogo p {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+}
