@@ -41,145 +41,8 @@ button:hover {
     background-color: rgb(109, 21, 191);
 }
 
-
-
-/*-----Container--------*/
-header {
-    background-color: rgb(245, 245, 245);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-
-header .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#menu-toggle {
-    display: none;
-}
-
-header .logo {
-    margin: 0;
-    padding: 20px 20px;
-    font-weight: bold;
-    color: blueviolet;
-    font-size: 1.6em;
-    cursor: pointer;
-    /* Para mostrar que es clicable */
-}
-
-header nav {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    padding-bottom: 0;
-    justify-content: space-between;
-}
-
-header nav ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li {
-    margin: 10px;
-    padding: 0;
-    font-size: 15px;
-}
-
-header a {
-    padding: 5px 12px;
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-}
-
-header a:hover {
-    color: blueviolet;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header input[type="checkbox"] {
-        display: none;
-    }
-
-    header input[type="checkbox"]:checked+label+nav {
-        display: block;
-    }
-
-    header label.logo {
-        width: 100%;
-        text-align: center;
-        margin: 0;
-    }
-
-    header nav {
-        display: none;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-
-    }
-
-    header nav ul li {
-        width: 100%;
-        text-align: center;
-
-    }
-
-    header nav ul li a {
-        display: block;
-        padding: 10px;
-        width: 100%;
-        font-size: 14px;
-    }
-
-    header input[type="checkbox"]:checked~nav {
-        display: block;
-    }
+h1{
+    max-width: 1000px;
 }
 
 
@@ -229,7 +92,8 @@ header a:hover {
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    height: 95vh;
+    padding-top: 78px;
+    height: calc(100dvh);
     color: white;
     background-repeat: no-repeat;
     background-size: cover;
@@ -297,15 +161,16 @@ header a:hover {
 @media (max-width: 768px) {
     #quienes-somos .container {
         display: block;
-        height: 70vh;
+        height: auto;
         padding: 0;
         margin: 0;
+        padding-bottom: 70px;
     }
 
     #quienes-somos .img-container {
         width: 100%;
         height: 200px;
-        margin-top: 140px;
+        margin-top: 40px;
     }
 
     #quienes-somos .text {
@@ -319,9 +184,7 @@ header a:hover {
     }
 
     #quienes-somos h2 {
-        margin-top: 0px;
-        font-size: 2.7em;
-        text-align: center;
+        display: none;
     }
 
 }
@@ -466,7 +329,7 @@ header a:hover {
 
 
     #nuestros-productos h2 {
-        font-size: 1.8em;
+        font-size: 1.6em;
         font-weight: bold;
         color: #0da3e3;
     }
@@ -491,31 +354,43 @@ header a:hover {
 
 /*Caracteristicas*/
 
-#caracteristicas .container {
-    text-align: center;
-    padding: 250px 12px;
+#caracteristicas .contenedor {
+    height: auto;
+    padding: 20px;
+    width: 100%;
+    background-image: linear-gradient(0deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url(../imagenes/PIOLIN_BEIGE.jpeg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+#caracteristicas ul {
+    margin-left: 0px;
+}
+
+#caracteristicas h2{
+    color: rgb(105, 36, 168);
+    text-shadow: 0px 0px 10px #ffffff;
+    font-size: 2.3em;
 }
 
 #caracteristicas li {
     margin: 12px 0px;
     font-weight: bold;
+    color: #fff;
+    padding: 0;
+    width: 100%;
 }
 
-#caracteristicas {
-    background-image: url(../imagenes/MILITAR_BEIGE.jpeg);
-    background-repeat: no-repeat;
-    background-size: 500px 400px;
-    background-position: calc(100vw - 700px) 120px;
-    margin-right: 20px;
+#caracteristicas .contenedor {
+    text-align: center;
 }
 
-#caracteristicas .container {
-    text-align: initial;
-}
-
-#caracteristicas ul {
-    margin-left: 100px;
-}
 
 @media (max-width: 768px) {
 
@@ -523,13 +398,8 @@ header a:hover {
         color: #ccc;
     }
 
-    #caracteristicas {
-        background-image: linear-gradient(0deg,
-                rgba(0, 0, 0, 0.5),
-                rgba(0, 0, 0, 0.5)), url(../imagenes/PIOLIN_BEIGE.jpeg);
-        background-position: center center;
-        background-size: cover;
-        width: 100%;
+    #caracteristicas .contenedor {
+       height: 100dvh;
     }
 
 }
@@ -538,15 +408,16 @@ header a:hover {
 
 #video .container {
     text-align: center;
-    padding: 200px 12px;
+    padding: 0px 12px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: auto;
 }
 
 
 #videos p {
-    font-size: 30px;
+    font-size: clamp(1em, 5vw, 1.2em);
     text-align: center;
     margin: 0 0 0 30px;
 
@@ -572,24 +443,25 @@ header a:hover {
 
 #video .container {
     text-align: center;
-    padding: 200px 12px;
+    padding: 0px 12px 50px 12px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     #video .container {
         padding: 0;
         margin: 0;
         display: block;
         align-items: center;
         justify-content: center;
+        margin: auto;
     }
 
 
     #videos p {
-        font-size: 16px;
         text-align: justify;
         padding-bottom: 70px;
         margin: 10px;
+        padding: 20px;
 
 
     }
@@ -619,195 +491,178 @@ header a:hover {
 
 
 /*Contacto 1*/
-
-#contacto1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    height: 100vh;
-    color: #fff;
-    background-color: rgb(30, 30, 30);
+#contacto1 .container{
+    padding: 50px;
 }
-
-#contacto1 img {
-    display: none;
-}
-
-#contacto1 h2 {
-    color: #48e;
-    font-size: 2.7em;
-    margin-bottom: 30px;
-}
-
-#contacto1 div {
-    background-image: linear-gradient(0deg,
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)), url(../imagenes/piolin/p3.jpeg);
-    background-position: center center;
-    background-size: cover;
-    max-width: 70%;
-    max-height: 70%;
-    border: 1px solid #aaa;
-    padding: 20px 50px;
-    border-radius: 20px;
-    width: 100%;
-}
-
-#contacto1 button {
-    font-size: 1em;
-    letter-spacing: 2px;
-    border-radius: 7px;
-    margin-top: 30px;
-    background-color: #48e;
-}
-
-@media (max-width: 768px) {
-    #contacto1 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-        height: auto;
-        color: #262424;
-        background-color: #ffffff;
-    }
-
-    #contacto1 img {
-        display: initial;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        margin-top: -25px;
-    }
-
-    #contacto1 h2 {
-        color: #0da3e3;
-        font-size: 2.7em;
-        text-align: center;
-
-
-    }
-
-    #contacto1 div {
-        max-width: 100%;
-        margin: 25px;
-        padding: 0;
-        border: none;
-        background-color: #ffffff;
-        background-image: none;
-
-
-    }
-
-    #contacto1 button {
-        font-size: 1em;
-        letter-spacing: 2px;
-        border-radius: 7px;
-        background-color: #0da3e3;
-        ;
-    }
-
-    #contacto1 p {
-        margin: 0;
-        padding: 0;
-        font-size: 14px;
-        text-align: justify;
-        margin-top: -55px;
-
-    }
-}
-
 
 
 /*Footer*/
-
-
 footer {
-    padding-top: 20px;
+    background-color: #333;
+    color: white;
+    padding: 70px 0 20px 0;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 footer ul {
-
-    list-style-type: none;
-    margin: 0;
+    list-style: none;
+    padding: 0;
     text-align: center;
-    align-items: center;
-
+    justify-content: center;
+    margin: auto;
 }
 
 footer ul li {
-    display: block;
-    margin: 0;
-    /* Puedes ajustar este valor según sea necesario */
-    font-size: 15px;
+    display: inline;
+    margin: 0 15px;
     padding: 0;
-
 }
-
-footer ul li p {
-    font-size: 15px;
-    margin: 0;
-    padding: 0;
-
-}
-
 
 footer ul li a {
-
+    color: white;
     text-decoration: none;
-    color: #555;
-    margin: 20px;
+    font-size: clamp(0.8em, 2.5vw, 1em);
+}
+
+footer ul li p{
+    color: white;
+    text-decoration: none;
+    font-size: clamp(1em, 2.5vw, 1.2em);
 }
 
 footer ul li a:hover {
-    color: blueviolet;
-
+    color: #ccc;
+    text-decoration: none;
+    list-style: none;
 }
 
-footer {
-    background-color: rgb(229, 225, 225);
-}
-
-footer p {
-    margin: 0;
-    color: #555;
-    padding: 12px
-}
-
-footer .container {
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end
-}
-
-
-footer .container {
-    justify-content: flex-end;
+footer ul li p:hover{
+    color: #ccc;
+    text-decoration: none;
+    list-style: none;
 }
 
 
 
-@media (max-width: 768px) {
+footer ul li a:hover {
+    text-decoration: underline;
+}
 
+
+@media (max-width: 600px) {
     footer {
-        background-color: rgb(30, 30, 30);
+        flex-direction: column;
     }
-
-
-    footer p {
-        margin: 0;
-        color: #ccc;
-        padding: 12px
-    }
-
-    footer ul li a {
-
-        text-decoration: none;
-        color: #ccc;
-        margin: 20px;
+    
+    footer ul li {
+        display: block;
+        margin: 0 15px;
+        padding: 0;
     }
 }
+
+
+/* MODAL */
+.modal1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4f4c56bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s;
+
+}
+.modal--show1{
+    opacity: 1 ;
+    pointer-events: unset;
+    transition: opacity 0.6s;
+    
+}
+.modal_container1{
+    width: 90%;
+    background-color: #fbfcfc;
+    margin: auto;
+    max-width: 500px;
+    max-height: auto;
+    border-radius: 10px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+
+}
+
+.modal_title1{
+   font-size: 2.5em;
+   text-align: center;
+   color: blueviolet;
+   
+
+}
+.modal_parrafo1{
+    margin-bottom:10px ;
+    font-size: 1em;
+    text-align: center;
+    text-align: justify;
+}
+ 
+.modal_img1{
+    width: 90%;
+    max-width: 300px ;
+    
+}
+.modal_close1{
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(224, 15, 103);
+    padding: 13px 0;
+    border-radius: 10px;
+    border: 1px solid;
+    font-weight: 350;
+    transition: background-color .3s;
+    letter-spacing: 2px;
+    width: 100%;
+    text-align: center;
+
+}
+.modal_close2:hover{
+    transform: scale(1.01);
+}
+.modal_close1:hover{
+    transform: scale(1.01);
+}
+.modal_close2{
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(5, 110, 71);
+    padding: 13px 0;
+    border: 1px solid;
+    font-weight: 350;
+    transition: background-color .3s;
+    letter-spacing: 2px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+
+}
+.modal_close2:hover{
+    background-color: #268b4f;
+    color: white;
+}
+
+.modal_close1:hover{
+    background-color: rgb(209, 47, 114);
+    color: white;
+}
+

@@ -2,13 +2,13 @@ body {
     font-family: Arial, sans-serif;
     padding: 20px;
     margin: 0;
-    background-color: #2c3e50; /* Cambié el color de fondo a un tono oscuro */
-    color: #fff;
+    background-color: #eee; /* Cambié el color de fondo a un tono oscuro */
+    color: #000;
 }
 
 h1 {
     text-align: center;
-    color: #8e44ad; /* Cambié el color del título a morado */
+    color: #000000; /* Cambié el color del título a morado */
 }
 
 section {
@@ -16,9 +16,9 @@ section {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #34495e; /* Cambié el color de fondo del área de contenido a un tono más oscuro */
+    background-color: #eee; /* Cambié el color de fondo del área de contenido a un tono más oscuro */
     border-radius: 20px;
-    border: 2px solid #8e44ad; /* Utilicé el morado para el borde */
+    border: 2px solid #000; /* Utilicé el morado para el borde */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
